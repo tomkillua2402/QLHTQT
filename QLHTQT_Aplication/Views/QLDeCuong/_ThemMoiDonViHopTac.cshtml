@@ -1,0 +1,122 @@
+﻿@model QLHTQT_Aplication.Models.QLDonViHopTacModel
+@{
+}
+<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM MỚI ĐƠN VỊ HỢP TÁC VIẾT ĐỀ CƯƠNG</strong></h3>
+        </div>
+        <form action="">
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên đơn vị:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                @Html.TextBoxFor(x => x.Ten_don_vi, new { @class = "form-control " })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Phân loại:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select id="Pham_vi_dia_ly" class="form-control select2">
+                                    <option value="1" selected>Việt Nam</option>
+                                    <option value="2" selected>Nước ngoài</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Giấy phép hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Giay_phep_hd, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Quốc gia:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.DropDownListFor(x => x.Quoc_gia, new SelectList(ViewBag.DSQuocGia, "country_id", "name"), new { @class = "form-control select2" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Địa chỉ:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                @Html.TextBoxFor(x => x.Dia_chi, new { @class = "form-control " })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Nhóm tổ chức:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.DropDownListFor(x => x.Quoc_gia, new SelectList(ViewBag.DSToChuc, "Id", "Ten_nhom"), new { @class = "form-control select2" })
+                            </div>
+
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số điện thoại:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                @Html.TextBoxFor(x => x.So_dien_thoai, new { @class = "form-control " })
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger
+        $('.select2').select2();
+    });
+    function btnSave_Onclick(e) {
+        e.preventDefault();
+        var formdata = $("form").serializeArray();
+        var data = {};
+        $(formdata).each(function (index, obj) {
+            data[obj.name] = obj.value;
+        });
+        $.ajax({
+            url: '/QLDeCuong/_LuuThongTinDonViHopTac',
+            type: 'post',
+            data: {
+                obj: data
+            },
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (data) {
+                $("#dynamic-modal-sub").modal('hide');
+                ShowToastMessage(data.msg, '', data.type);
+                reload();
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+
+</script>
+
+

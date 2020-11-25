@@ -1,0 +1,108 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM HOẠT ĐỘNG HỢP TÁC</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mã hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày phê duyệt:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="datetime" id="Ngay_phe_duyet" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại quan hệ hợp tác:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Đào tạo</option>
+                                    <option value="2">Nghiên cứu khoa học</option>
+                                    <option value="3">Tư vấn-Dịch vụ-Phát triển nâng cao năng lực cho cơ sở khác</option>
+                                    <option value="4">Phát triển nâng cao năng lực cho trường DHYTCC</option>
+                                    <option value="5">Khác</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại quan hệ hợp tác(khác):</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" value="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên hoạt động hợp tác(VI):</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên hoạt động hợp tác(EN):</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Phạm vi địa lý:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Trong nước</option>
+                                    <option value="2">Ngoài nước</option>
+                                    <option value="2">Trong nước và Ngoài nước</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số quyết định phê duyệt:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="file" class="form-control btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_phe_duyet').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+
+
+

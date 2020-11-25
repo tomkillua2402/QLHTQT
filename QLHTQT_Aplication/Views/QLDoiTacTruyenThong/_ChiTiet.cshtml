@@ -1,0 +1,96 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>CHI TIẾT THÔNG TIN ĐỐI TÁC TRUYỀN THÔNG</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mã đối tác:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" value="DTA" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại đối tác:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Truyền hình</option>
+                                    <option value="2">Báo in</option>
+                                    <option value="3" selected>Báo điện tử</option>
+                                    <option value="4">Phát thanh</option>
+                                    <option value="5">Quảng cáo</option>
+                                    <option value="6">Mạng xã hội</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Quan hệ truyền thông:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1" selected>Lâu dài</option>
+                                    <option value="2">Vụ việc</option>
+                                    <option value="3">Tiềm năng</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại sự kiện:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Hội nghị</option>
+                                    <option value="2" selected>Hội thảo</option>
+                                    <option value="3">Tọa đàm truyền hình</option>
+                                    <option value="4">Lễ tốt nghiệp</option>
+                                    <option value="5">Lễ khai giảng</option>
+                                    <option value="6">Tập huấn</option>
+                                    <option value="7">Mít tinh</option>
+                                    <option value="8">Gặp mặt</option>
+                                    <option value="9">Ký kết hợp tác</option>
+                                    <option value="10">Họp báo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Email đối tác:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="email" name="name" class="form-control" value="namvietsc@gmail.com" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số điện thoại đối tác:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control" value="0987654321" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;CẬP NHẬT</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+

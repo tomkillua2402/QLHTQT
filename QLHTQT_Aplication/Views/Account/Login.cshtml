@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="login-box-body" style="padding:10px; box-shadow:2px 5px 10px darkgreen;border:none;border-radius:15px">
+    <p class="login-box-msg"><b>Đăng nhập</b></p>
+
+    @*<form style="margin-bottom: 3%;margin-left: 23%">
+            <label class="radio-inline">
+                <input type="radio" name="checkLogin" value="2" checked="checked" />Sinh viên<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="checkLogin" value="1" />Giảng viên<br>
+            </label>
+        </form>*@
+
+    <form method="post">
+        <div class="form-group has-feedback">
+            <input type="text" id="username" class="form-control" autofocus placeholder="Tài khoản">
+        </div>
+        <div class="form-group has-feedback">
+            <input type="password" id="password" class="form-control" placeholder="Mật khẩu">
+        </div>
+        <div class="row">
+            <!-- /.col -->
+            <div class="col-xs-4">
+                <button href="javascript:void(0);" type="button" id="btnLogin" class="btn btn-success">Đăng nhập</button>
+            </div>
+            <!-- /.col -->
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                event.preventDefault();
+                if ($("#error").css("display") == 'block')
+                    console.log('show dialog');
+                else
+                    $("#btnLogin").click();
+            }
+        });
+        $("#btnLogin").click(function () {
+            $.ajax({
+                url: "/Account/do_Login",
+                method: 'post',
+                data: {
+                    user: $("#username").val().trim(),
+                    pass: $("#password").val().trim(),
+                },
+                success: function (data) {
+                    $('.loading').hide();
+                    if (data.Result == "SUCCESS") {
+                        ShowToastMessage(data.Message, '', 'success');
+                        window.location.href = data.Url;
+                    } else {
+                        ShowToastMessage(data.Message, '', 'error');
+                    }
+                },
+                error: function (ErrorThrown) {
+                    ShowToastMessage(ErrorThrown, '', 'error');
+                }
+            })
+        })
+    });
+</script>
+<style>
+    #username {
+        border-radius: 15px;
+    }
+
+    #password {
+        border-radius: 15px;
+    }
+
+    #btnLogin {
+        text-align: center;
+        margin-left: 140%;
+        margin-right: auto;
+    }
+</style>

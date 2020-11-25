@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách đơn vị chủ quản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <label><i class="fa fa-filter"></i>&nbsp;TIÊU CHÍ TÌM KIẾM</label>
+        <form action="" id="frm-search">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="form-group">
+                        @*@{ Html.TextBoxFor(x => x.Keyword, new { @class = "form-control", placeholder = "Nhập từ khóa tìm kiếm" });}*@
+                        <input type="text" name="Keyword" id="Keyword" class="form-control" placeholder="Nhập từ khóa tìm kiếm" value="" />
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <button class="btn btn-sm btn-primary" id="btn-search"><i class="fa fa-search"></i>&nbsp;TÌM KIẾM</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="box-body box-profile">
+        <div class="header_tab">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5">
+                    <span>Hiển thị: </span>
+                    <select name="" id="displayCount" class="form-control custom_select">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                    </select>
+                    <span> dữ liệu</span>
+                </div>
+                <div class="col-xs-12 col-sm-7 text-right">
+                    <button onclick="btnThemMoi(0)" class="btn btn-sm btn-success"><i class="fa fa-paper-plane"></i>&nbsp;THÊM MỚI</button>&nbsp;
+                    <button onclick="showDeleteConfirm()" class="btn btn-sm btn-danger"><i class="fa fa-close"></i>&nbsp;Xóa</button>
+                    <button onclick="Refresh()" class="btn btn-sm bg-gray"><i class="fa fa-refresh"></i>&nbsp;TẢI LẠI</button>&nbsp;
+                </div>
+            </div>
+        </div>
+        <div id="divDanhSach">
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="dynamic-modal-sub" data-backdrop="static" data-keyboard="false"></div>
+@section scripts{
+    <script type="text/javascript">
+        var data = {
+            "Keyword": $("#Keyword").val(),
+            "FormDate": $("#FromDate").val(),
+            "ToDate": $("#ToDate").val()
+        }
+    $(document).ready(function () {
+        runGrid();
+        $('.datepicker').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy'
+        });
+    })
+    $("#btn-search").click(function (e) {
+        e.preventDefault();
+        setData();
+        runGrid();
+    });
+    $("#displayCount").change(function () {
+        setData();
+        runGrid();
+    });
+    function runGrid() {
+        $("#divDanhSach").jsGrid({
+            height: "auto",
+            width: "100%",
+            editing: false,
+            sorting: true,
+            paging: true,
+            autoload: true,
+            pageLoading: true,
+            pageSize: Number($("#displayCount").val()),
+            pageIndex: 1,
+            pageButtonCount: 5,
+            loadMessage: "Đang tải dữ liệu...",
+            pagerFormat: "Số trang: {first} {prev} {pages} {next} {last}    {pageIndex} / {pageCount}",
+            pagePrevText: "<<",
+            pageNextText: ">>",
+            pageFirstText: "1",
+            pageLastText: "Trang cuối",
+            pageNavigatorNextText: "...",
+            pageNavigatorPrevText: "...",
+
+            controller: {
+                loadData: function (filter) {
+                    //data["PageIndex"] = filter.pageIndex;
+                    //data["PageSize"] = filter.pageSize;
+                    var deferred = $.Deferred();
+                    var data = [{ TenDV:"Đơn vị chủ quản A",NguoiLH: "Nguyễn Văn A", DiaChi: "201, ngõ 1 đường A", SoDienThoai: "0987654321"}]
+                    var dt = {
+                        data: data,
+                        itemsCount: data.length
+                    }
+                    deferred.resolve(dt);
+
+
+                    return deferred.promise();
+                }
+            },
+
+            fields: [
+                {
+                    name: "TenDV", type: "text", align: "left", title: "Tên đơn vị chủ quản",
+                },
+
+                {
+                    name: "NguoiLH", type: "text", align: "left", title: "Người liên hệ trực tiếp"
+                },
+
+                {
+                    name: "DiaChi", type: "text", align: "left", title: "Địa chỉ"
+                },
+                {
+                    name: "SoDienThoai", type: "text", width: 75, align: "left", title: "Số điện thoại"
+                },
+                {
+                    name: "", width: 50, height: 150, align: "center", title: "Chi tiết",
+                    cellRenderer: function (value, item) {
+                        return '<td><a class="btn btn-xs btn-info" href="javascript:void(0)" onclick="btnChiTiet(' + item.Id + ')"><i class="fa fa-info-circle"></i></a></td>';
+                    }
+                },
+                {
+                    name: "", width: 30, height: 150, align: "center", title: "#",
+                    cellRenderer: function (value, item) {
+                        return '<td><input type="checkbox" value="' + item.Id + '" class="ckbChoDuyet"/></td>';
+                    }
+                },
+            ]
+        });
+    }
+    function btnChiTiet(id) {
+        $.ajax({
+            url: '/QLHopTac/_ChiTietDonViChuQuan',
+            type: 'get',
+            data: {
+                id: 0
+            },
+            success: function (data) {
+                $('#dynamic-modal-sub').html(data);
+                $("#dynamic-modal-sub").modal('show');
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+    function btnThemMoi(id) {
+        $.ajax({
+            url: '/QLHopTac/_ThemDonViChuQuan',
+            type: 'get',
+            data: {
+                id: 0
+            },
+            success: function (data) {
+                $('#dynamic-modal-sub').html(data);
+                $("#dynamic-modal-sub").modal('show');
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+
+    function convertDate(data) {
+        var getdate = parseInt(data.replace("/Date(", "").replace(")/", ""));
+        var ConvDate = new Date(getdate);
+        return ConvDate.getDate() + "/" + ConvDate.getMonth() + "/" + ConvDate.getFullYear();
+    }
+    function Refresh() {
+        $("#Keyword").val("");
+        reload();
+    }
+
+    function showDeleteConfirm() {
+        var lstIDs = [];
+        $('.ckbChoDuyet').each(function () {
+            var _checked = $(this).is(":checked")
+            if (_checked) {
+                lstIDs.push($(this).prop("value"));
+            }
+        })
+        if (lstIDs.length == 0) {
+            ShowToastMessage('Vui lòng chọn ít nhất một dữ liệu!!!', '', 'warning');
+            return
+        }
+        if (confirm("Bạn chắc chắn muốn xóa những dữ liệu này?")) {
+            $.ajax({
+                type: 'POST',
+                dataType: 'JSON',
+                url: '/QLDoanVao/_Delete',
+                data: { lstIDs: lstIDs.join() },
+                success: function (data) {
+                    ShowToastMessage(data.msg, '', data.type);
+                    reload();
+                },
+                error: function (val) {
+                    ShowToastMessage(data.msg, '', data.type);
+                }
+            })
+        }
+    }
+
+    function exportExcel() {
+        $.ajax({
+            type: 'GET',
+            url: '/QLDoanVao/ExportTemplate',
+            data: {
+                fromDate: $("#FromDate").val(),
+                toDate: $("#ToDate").val()
+            },
+            success: function (data) {
+                if (data.type == 'failed') {
+                    ShowToastMessage(data.msg, '', 'warning');
+                }
+                else {
+                    window.location = "/QLDoanVao/Export?keyword=" + $("#Keyword").val() + "&fromDate=" + $("#FromDate").val() + "&toDate=" + $("#ToDate").val() + "";
+                }
+            },
+            error: function (val) {
+            }
+        })
+
+    }
+
+    function setData() {
+        data["Keyword"] = $("#Keyword").val();
+        data["FormDate"] = $("#FromDate").val();
+        data["ToDate"] = $("#ToDate").val();
+    }
+
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

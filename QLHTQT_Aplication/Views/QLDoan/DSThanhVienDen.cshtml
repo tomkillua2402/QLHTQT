@@ -1,0 +1,100 @@
+﻿@model QLHTQT_Aplication.Models.ThanhVienDenPaging
+
+<div id="divDSThanhVienDen">
+
+</div>
+@section sctipt{
+    <script type="text/javascript">
+        function reload() {
+            $("#divDSThanhVienDen").jsGrid({
+                height: "auto",
+                width: "100%",
+                editing: false,
+                sorting: true,
+                paging: true,
+                autoload: true,
+                pageLoading: true,
+                pageSize: Number($("#displayCount").val()),
+                pageIndex: 1,
+                pageButtonCount: 5,
+                loadMessage: "Đang tải dữ liệu...",
+                pagerFormat: "Số trang: {first} {prev} {pages} {next} {last}    {pageIndex} / {pageCount}",
+                pagePrevText: "<<",
+                pageNextText: ">>",
+                pageFirstText: "1",
+                pageLastText: "Trang cuối",
+                pageNavigatorNextText: "...",
+                pageNavigatorPrevText: "...",
+
+                controller: {
+                    loadData: function (filter) {
+                        data["PageIndex"] = filter.pageIndex;
+                        data["PageSize"] = filter.pageSize;
+                        var deferred = $.Deferred();
+                        $.ajax({
+                            type: "get",
+                            url: "/QLDoan/_DanhSachThanhVienDen",
+                            data: {
+                                obj: JSON.stringify(data)
+                            },
+                            success: function (data) {
+                                if (data.Result == "SUCCESS") {
+                                    var dt = {
+                                        data: data.Data.lst,
+                                        itemsCount: data.Data.totalCount
+                                    }
+                                    deferred.resolve(dt);
+                                } else {
+                                    $('#jsLophocphan').jsGrid({
+                                        loadIndication: false
+                                    });
+                                }
+                            }
+                        });
+
+                        return deferred.promise();
+                    }
+                },
+
+                fields: [
+                    {
+                        name: "Ma_doan_den", type: "text", align: "left", title: "Ma doan den",
+                    },
+                    //{
+                    //    name: "", type: "text", align: "left", title: "Họ và tên",
+                    //    cellRenderer: function (value, item) {
+                    //        return "<td>" + item.Ho + " " + item.Ten_dem + " " + item.Ten + "</td>";
+                    //    }
+                    //},
+                    { name: "Ho", type: "text", align: "left", title: "ho" },
+                    //{
+                    //    name: "", width: 75, type: "text", align: "left", title: "Ngày sinh",
+                    //    cellRenderer: function (value, item) {
+                    //        return '<td align="center">'+convertDate(item.Ngay_sinh)+'</td>'
+                    //    }
+                    //},
+                    { name: "Ten_dem", type: "text", align: "left", title: "Ten dem" },
+                    { name: "Ten", type: "text", width: 75, align: "left", title: "Ten" },
+                    {
+                        name: "", width: 50, height: 150, align: "center", title: "Chi tiết",
+                        cellRenderer: function (value, item) {
+                            return '<td><a class="btn btn-xs btn-info" href="javascript:void(0)" onclick="btnChiTiet(' + item.Id + ')"><i class="fa fa-info-circle"></i></a></td>';
+                        }
+                    },
+                    {
+                        name: "", width: 50, height: 150, align: "center", title: "Thành viên",
+                        cellRenderer: function (value, item) {
+                            return '<td><a class="btn btn-xs bg-navy" href="javascipt:void(0)"  onclick="btnThanhVien(' + item.MaDoanDen + ')"><i class="fa fa-user"></i></a></td>';
+                        }
+                    },
+                    {
+                        name: "", width: 30, height: 150, align: "center", title: "X",
+                        cellRenderer: function (value, item) {
+                            return '<td><input type="checkbox" value="' + item.Id + '" class="ckbChoDuyet"/></td>';
+                        }
+                    },
+                ]
+            });
+        }
+    </script>
+    }

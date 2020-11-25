@@ -1,0 +1,216 @@
+﻿@model QLHTQT_Aplication.Models.QLDoanDenModel
+@{
+}
+
+<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM THÔNG TIN ĐOÀN ĐẾN</strong></h3>
+        </div>
+        <form action="">
+            @Html.HiddenFor(x => x.Id)
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="row">
+                        <h5>Thông tin tổ chức</h5>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Tên tổ chức:</label>
+                                    @Html.TextBoxFor(x => x.Ten_to_chuc, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Loại tổ chức:</label>
+                                    @Html.DropDownListFor(x => x.Loai_to_chuc, new SelectList(ViewBag.DSLoaiToChuc, "Id", "Ten_loai_to_chuc"), new { @class = "form-control select2" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Điện thoại:</label>
+                                    @Html.TextBoxFor(x => x.Dien_thoai, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Email:</label>
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Địa chỉ:</label>
+                                    @Html.TextBoxFor(x => x.Dia_chi, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Châu lục:</label>
+                                    @Html.DropDownListFor(x => x.Chau_luc, new SelectList(ViewBag.DSChauLuc, "code", "name"), new { @class = "form-control select2" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Quốc gia:</label>
+                                    @Html.DropDownListFor(x => x.Quoc_tich, new List<SelectListItem>(), new { @class = "form-control select2" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Đơn vị đề nghị:</label>
+                                    @Html.DropDownListFor(x => x.Don_vi_de_nghi, new SelectList(ViewBag.DSDonVi, "Id", "Ten_don_vi"), new { @class = "form-control select2" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Email liên hệ:</label>
+                                    @Html.TextBoxFor(x => x.Email_lien_lac, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h5>Thông tin công văn:</h5>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Số công văn:</label>
+                                    @Html.TextBoxFor(x => x.So_cong_van, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Ngày công văn:</label>
+                                    @Html.TextBoxFor(x => x.Ngay_cong_van, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Chương trình hoạt động:</label>
+                                    @Html.TextBoxFor(x => x.Chuong_trinh_hoat_dong, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Dự kiến tạm trú:</label>
+                                    @Html.TextBoxFor(x => x.Du_kien_tam_tru, new { @class = "form-control" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Tỉnh thành phố tạm trú:</label>
+                                    @Html.DropDownListFor(x => x.Tinh_thanh_pho_tam_tru, new SelectList(ViewBag.DSTinh, "ID_tinh", "Ten_tinh"), new { @class = "form-control select2" })
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Đơn vị đón tiếp:</label>
+                                    @Html.DropDownListFor(x => x.Don_vi_don_tiep, new SelectList(ViewBag.DSDonVi, "Id", "Ten_don_vi"), new { @class = "form-control select2" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Nhận công văn:</label>
+                                    <select class="select2">
+                                        <option value="1">Có</option>
+                                        <option value="2">Không</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <label>Lý do nhận thị thực:</label>
+                                    @Html.TextBoxFor(x=>x.Ly_do_nhan_thi_thuc, new { @class="form-control"})
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-2 col-form-label">Tài liệu (pdf/docx/pptx)</label>
+                                        <div class="col-sm-4">
+                                            @{ Html.RenderPartial("~/Views/UploadFile/Upload.cshtml", new QLHTQT_Aplication.Models.UploadConfig()
+                                                {
+                                                    ID = "FileUpload_File",
+                                                    Name = "FileUpload_File",
+                                                    isMultiple = true,
+                                                    DisplayType = QLHTQT_Aplication.Util.EnumConstants.UploadType.File,
+                                                    Overwrite = false,
+                                                    Accept = "*"
+                                                });
+                                            }
+                                            @Html.HiddenFor(g => g.FileUpload)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.select2').select2();
+        //radioLoaiDeTaiChange();
+        loadCountryByContinents($('#@Html.IdFor(x=>x.Chau_luc)').val());
+        $('#Ngay_cong_van').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy'
+        });
+        var currentDate = new Date();
+        $("#Ngay_cong_van").datepicker("setDate", currentDate);
+    });
+    $('#@Html.IdFor(x=>x.Chau_luc)').change(function () {
+        debugger
+        loadCountryByContinents($('#@Html.IdFor(x=>x.Chau_luc)').val());
+    });
+
+    $('#Dien_thoai').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+    });
+
+    function btnSave_Onclick(e) {
+        e.preventDefault();
+        var formdata = $("form").serializeArray();
+        var data = {};
+        $(formdata).each(function (index, obj) {
+            data[obj.name] = obj.value;
+        });
+        $.ajax({
+            url: '/QLDoan/_LuuDoanDen',
+            type: 'post',
+            data: {
+                obj: data
+            },
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (data) {
+                $("#dynamic-modal-sub").modal('hide');
+                ShowToastMessage(data.msg, '', data.type);
+                reload();
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+
+    function loadCountryByContinents(id) {
+        $.ajax({
+            url: '/QLDoan/GetCountryByContinents',
+            type: 'get',
+            async: false,
+            data: {
+                id: id
+            },
+            success: function (data) {
+                $('#Quoc_tich').find('option').remove();
+                $.each(data.data, function (i, x) {
+                    var opt = new Option(x.name, x.country_id);
+                    $('#@Html.IdFor(x=>x.Quoc_tich)').append(opt);
+                });
+
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+</script>

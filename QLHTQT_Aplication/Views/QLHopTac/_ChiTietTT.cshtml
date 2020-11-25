@@ -1,0 +1,108 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÔNG TIN CHI TIẾT VỀ HOẠT ĐỘNG ĐỘNG HỢP TÁC</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-4 colm-md-4">
+                            <label>Ngày bắt đầu:</label>
+                            <input type="datetime" id="Ngay_bat_dau" value="25/09/2020" class="form-control" />
+                            <br />
+                            <label>Ngày kết thúc:</label>
+                            <input type="datetime" id="Ngay_ket_thuc" value="30/09/2020" class="form-control" />
+                            <br />
+                            <label>Tổng kinh phí:</label>
+                            <input type="text" name="name" value="10.000.000 VNĐ" class="form-control" />
+                            <br />
+                            <label>Dự kiến đầu ra:</label>
+                            <input type="file" class="form-control btn-default" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-4 colm-md-4">
+                            <label>Địa điểm:</label>
+                            <select class="form-control">
+                                <option value="1">Trong nước</option>
+                                <option value="2" selected>Ngoài nước</option>
+                            </select>
+                            <br />
+                            <label>Quốc gia:</label>
+
+                            <select class="form-control">
+                                <option value="1">Việt Nam</option>
+                                <option value="2" selected>Thái Lan</option>
+                                <option value="3">Campuchia</option>
+                                <option value="4">Lào</option>
+                                <option value="5">Trung Quốc</option>
+                                <option value="6">....</option>
+                            </select>
+                            <br />
+                            <label>Tỉnh thành phố(VN):</label>
+                            <select class="form-control">
+                                <option value="" selectet>Không chọn</option>
+                                <option value="1">Hà Nội</option>
+                                <option value="2">Hồ Chí Minh</option>
+                                <option value="3">Đà Nẵng</option>
+                                <option value="4">Thái Bình</option>
+                                <option value="5">Nam Định</option>
+                                <option value="6">....</option>
+                            </select>
+                            <br />
+                            <label>Nội dung hoạt động:</label>
+                            <input type="file" class="form-control btn-default" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-4 colm-md-4">
+                            <label>Mục tiêu chung:</label>
+                            <input type="text" name="name" value="Bàn luận nghiên cứu phát triển" class="form-control" />
+                            <br />
+                            <label>Mục tiêu cụ thể:</label>
+                            <input type="text" name="name" value="Phát triển về lĩnh vực A" class="form-control" />
+                            <br />
+                            <label>Gia hạn hoạt động:</label>
+                            <input type="text" name="name" value="Gia hạn hoạt động A" class="form-control" />
+                            <br />
+                            <label>Quyết định gia hạn số:</label>
+                            <input type="file" class="form-control btn-default" />
+                            <br />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;CẬP NHẬT</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_bat_dau').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    $('#Ngay_ket_thuc').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+
+
+
+
+

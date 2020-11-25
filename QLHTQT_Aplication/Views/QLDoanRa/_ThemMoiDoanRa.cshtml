@@ -1,0 +1,185 @@
+﻿@model QLHTQT_Aplication.Models.QLDoanRaModel
+
+<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM THÔNG TIN ĐOÀN RA</strong></h3>
+        </div>
+        <form action="">
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Họ Tên:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Ho_ten, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Quyết định:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Quyet_dinh_so, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đơn vị:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Don_vi, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đối tượng đi:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select id="Doi_tuong_di" class="form-control select2" required>
+                                    <option value="">--Chọn đối tượng đi--</option>
+                                    <option value="1">Giáo viên</option>
+                                    <option value="2">Phòng ban</option>
+                                    <option value="3">Sinh viên</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Quốc tịch:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.DropDownListFor(x => x.Quoc_tich, new SelectList(ViewBag.DSQuocTich, "country_id", "name"), new { @class = "form-control select2" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Nơi đi:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Noi_di, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số hộ chiếu:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.So_ho_chieu, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mục đích đi:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.DropDownListFor(x => x.Muc_dich_di, new SelectList(ViewBag.DSMucDich, "Id", "Ten_muc_dich"), new { @class = "form-control select2" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày đi:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @*<input type="datetime" class="form-control datepicker" id="Ngay_di" name="Ngay_di" value="@Model.Ngay_di" />*@
+                                @Html.TextBoxFor(x => x.Ngay_di, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Nguồn kinh phí:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.DropDownListFor(x => x.Nguon_kinh_phi, new SelectList(ViewBag.DSNguonKinhPhi, "Id", "Ten_nguon_kinh_phi"), new { @class = "form-control select2" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày về:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @*<input type="datetime" class="form-control datepicker" id="Ngay_ve" name="Ngay_ve" value="@Model.Ngay_ve" />*@
+                                @Html.TextBoxFor(x => x.Ngay_ve, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đối tác nước ngoài:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Doi_tac_nuoc_ngoai, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tổng thời gian:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Tong_thoi_gian, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Kết quả chuyến đi:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                @Html.TextBoxFor(x => x.Ket_qua_chuyen_di, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger
+        $('.select2').select2();
+        $('#Ngay_di').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy'
+        });
+        $('#Ngay_ve').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy'
+        });
+    });
+    function btnSave_Onclick(e) {
+        e.preventDefault();
+        var formdata = $("form").serializeArray();
+        var data = {};
+        $(formdata).each(function (index, obj) {
+            data[obj.name] = obj.value;
+        });
+        $.ajax({
+            url: '/QLDoanRa/_LuuThongTin',
+            type: 'post',
+            data: {
+                obj: data
+            },
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (data) {
+                $("#dynamic-modal-sub").modal('hide');
+                ShowToastMessage(data.msg, '', data.type);
+                reload();
+            },
+            error: function (errorThrown) {
+            }
+        });
+    }
+
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+

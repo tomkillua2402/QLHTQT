@@ -1,0 +1,2130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25E0F7A7-E46B-42B1-9D34-40D1E6AF496A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLHTQT_Aplication</RootNamespace>
+    <AssemblyName>QLHTQT_Aplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=20.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.20.9.0\lib\net40\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Membase, Version=2.14.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Membase.2.14\lib\net35\Membase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QLDoanController.cs" />
+    <Compile Include="Controllers\UploadFileController.cs" />
+    <Compile Include="DataAccess\BaseDAL.cs" />
+    <Compile Include="DataAccess\QLHTQT_DoanDiDAL.cs" />
+    <Compile Include="DataAccess\QLHTQT_DoanDenDAL.cs" />
+    <Compile Include="DataAccess\AccountDAL.cs" />
+    <Compile Include="DataAccess\QLHTQT_ThanhVienDenDAL.cs" />
+    <Compile Include="DBConnections\Common.cs" />
+    <Compile Include="DBConnections\DBConnection.cs" />
+    <Compile Include="DBConnections\DBConnectionString.cs" />
+    <Compile Include="DBConnections\Encryptor.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Common\Continents.cs" />
+    <Compile Include="Models\Common\Country.cs" />
+    <Compile Include="Models\DonViModels.cs" />
+    <Compile Include="Models\UploadConfig.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\LoaiToChucModel.cs" />
+    <Compile Include="Models\QLDoanDiModel.cs" />
+    <Compile Include="Models\QLDoanDenModel.cs" />
+    <Compile Include="Models\STU_TinhModels.cs" />
+    <Compile Include="Models\ThanhVienDenModel.cs" />
+    <Compile Include="Models\UploadFile.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Util\Authorize.cs" />
+    <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\EmailHelper.cs" />
+    <Compile Include="Util\EnumConstants.cs" />
+    <Compile Include="Util\HelperXML.cs" />
+    <Compile Include="Util\SessionControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\js\bootstrap-datepicker.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.bm.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\requirements.txt" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\demo_head.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\markup_component.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\markup_daterange.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\markup_inline.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\markup_input.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_calendarweeks.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_clearbtn.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_daysofweekdisabled.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_enddate.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_language.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_multidate.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_showweekdays.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_startdate.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_todaybtn.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_todayhighlight.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\option_weekstart.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\script\common.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\script\common.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\script\debug.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\script\html-imports.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_screenshots\script\screenshot.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\demo_head.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\markup_component.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\markup_daterange.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\markup_inline.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\markup_input.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_calendarweeks.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_clearbtn.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_daysofweekdisabled.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_enddate.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_language.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_multidate.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_showweekdays.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_startdate.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_todaybtn.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_todayhighlight.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\_static\screenshots\option_weekstart.png" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\Gruntfile.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker-en-CA.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar-tn.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.bm.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.bn.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.br.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-AU.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-CA.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-IE.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-NZ.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.en-ZA.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.eo.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.hi.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.km.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ko.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.me.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.mn.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.oc.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.si.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.ta.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.tg.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.tk.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.uz-cyrl.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.uz-latn.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\coverage.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\jquery-1.7.1.min.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\mock.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\qunit-logging.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\qunit.css" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\qunit.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\assets\utils.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\calendar-weeks.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\component.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\data-api.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\events.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\formats.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\inline.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\keyboard_navigation\2011.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\keyboard_navigation\2012.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\keyboard_navigation\all.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\methods.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\methods_jquery.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\mouse_navigation\2011.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\mouse_navigation\2012.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\mouse_navigation\all.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\noconflict.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\options.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\timezone.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\suites\touch_navigation\all.js" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\tests.html" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\timezone.html" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\demo.html" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\drp.png" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\amd\index.html" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\amd\main.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\amd\require.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\browserify\bundle.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\browserify\index.html" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\browserify\main.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\package.js" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\website\index.html" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\website\website.css" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\website\website.js" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\browsers.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\change-version.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\generate-sri.js" />
+    <Content Include="Content\bower_components\bootstrap\grunt\karma.conf.js" />
+    <Content Include="Content\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Content\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Content\bower_components\bootstrap\js\button.js" />
+    <Content Include="Content\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Content\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Content\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Content\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Content\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Content\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Content\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Content\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Content\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Content\bower_components\bootstrap\package.js" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\allow-page-scroll.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\chaining.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\disable-fade-out.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\dynamic-content.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\height-width.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\index.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\mouse-wheel.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\multiple-elements.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\navigation.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\nested.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\programmatic-scrolling.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\rail.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\scroll-events.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\scrollbar.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\start-position.html" />
+    <Content Include="Content\bower_components\jquery-slimscroll\examples\style.css" />
+    <Content Include="Content\bower_components\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\bower_components\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\bower_components\jquery-ui\jquery-ui.js" />
+    <Content Include="Content\bower_components\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\accordion.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\all.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\autocomplete.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\base.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\button.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\checkboxradio.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\controlgroup.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\core.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\datepicker.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\dialog.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\draggable.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\menu.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\progressbar.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\resizable.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\selectable.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\selectmenu.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\slider.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\sortable.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\spinner.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\tabs.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\base\tooltip.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_diagonals-thick_8_333333_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_glass_40_111111_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_glass_55_1c1c1c_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_highlight-hard_100_f9f9f9_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_highlight-hard_40_aaaaaa_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_highlight-soft_50_aaaaaa_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_inset-hard_45_cd0a0a_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-bg_inset-hard_55_ffeb80_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_4ca300_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_ededed_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_ffcf29_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\black-tie\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-icons_004276_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\blitzer\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\cupertino\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_highlight-hard_20_0972a5_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_highlight-soft_33_003147_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_highlight-soft_35_222222_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_highlight-soft_44_444444_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-bg_loop_25_000000_21x21.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dark-hive\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_diagonals-thick_15_0b3e6f_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_dots-medium_30_0b58a2_4x4.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_dots-small_20_333333_2x2.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_dots-small_30_a32d00_2x2.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_dots-small_40_00498f_2x2.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-bg_gloss-wave_20_111111_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-icons_00498f_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-icons_98d2fb_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-icons_9ccdfc_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\dot-luv\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-bg_gloss-wave_30_3d3644_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-bg_highlight-soft_100_dcd9de_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-bg_highlight-soft_100_eae6ea_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-bg_highlight-soft_25_30273a_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-bg_highlight-soft_45_5f5964_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_734d99_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_8d78a5_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_a8a3ae_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_ebccce_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\eggplant\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_diagonals-thick_20_e69700_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_diagonals-thick_22_1484e6_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_diagonals-thick_26_2293f7_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-bg_inset-hard_100_eeeeee_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-icons_0a82eb_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-icons_0b54d5_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-icons_5fa5e3_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-icons_fcdd4a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\excite-bike\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\flick\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_diagonals-small_75_ccd232_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_dots-medium_80_ffff38_4x4.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_dots-small_35_35414f_2x2.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-bg_white-lines_85_f7f7ba_40x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_88a206_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_c02669_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_e1e463_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\hot-sneaks\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_glass_100_f5f0e5_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_glass_25_cb842e_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_glass_70_ede4d4_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_highlight-hard_100_f4f0ec_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_highlight-hard_75_f5f5b5_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-bg_inset-soft_100_f4f0ec_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_c47a23_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_cb672b_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_f08000_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_f35f07_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\humanity\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_diagonals-thick_15_444444_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_glass_55_fbf5d0_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_highlight-hard_30_285c00_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_highlight-soft_33_3a8104_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_highlight-soft_50_4eb305_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-bg_inset-soft_10_285c00_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-icons_4eb305_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-icons_72b42d_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\le-frog\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_glass_15_5f391b_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_gloss-wave_20_1c160d_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_gloss-wave_25_453326_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_gloss-wave_30_44372c_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_highlight-soft_20_201913_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_highlight-soft_20_619226_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-bg_inset-soft_10_201913_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_9bcc60_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_add978_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_e3ddc9_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_f1fd86_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\mint-choc\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-icons_999999_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\overcast\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_diagonal-maze_20_6e4f1c_10x10.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_diagonal-maze_40_000000_10x10.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_10_eceadf_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_10_f8f7f6_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_15_eceadf_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_15_f7f3de_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_15_ffffff_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_65_654b24_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-bg_fine-grain_68_b83400_60x60.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_3572ac_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_8c291d_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_b83400_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_fbdb93_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\pepper-grinder\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\redmond\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\smoothness\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_8DC262_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\south-street\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\start\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_diagonals-medium_20_d34d17_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_gloss-wave_45_817865_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_gloss-wave_60_fece2f_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_gloss-wave_70_ffdd57_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_gloss-wave_90_fff9e5_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_highlight-soft_100_feeebd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-bg_inset-soft_30_ffffff_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_3d3d3d_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_bd7b00_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_d19405_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_eb990f_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_ed9f26_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_fadc7a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\images\ui-icons_ffe180_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\sunny\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_10_4f4221_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_20_372806_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_25_675423_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_25_d5ac5d_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_8_261803_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_diamond_8_443113_10x8.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_070603_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_e8e2b5_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_e9cd86_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_efec9f_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_f2ec64_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_f9f2bd_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\swanky-purse\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_diagonals-small_50_262626_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_glass_40_0a0a0a_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_glass_55_f1fbe5_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_glass_60_000000_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_gloss-wave_55_000000_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_gloss-wave_85_9fda58_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-bg_gloss-wave_95_f6ecd5_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_000000_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_1f1f1f_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_9fda58_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_b8ec79_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\trontastic\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-darkness\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\ui-lightness\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_gloss-wave_16_121212_500x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_highlight-hard_15_888888_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_highlight-hard_55_555555_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_highlight-soft_35_adadad_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_highlight-soft_60_dddddd_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-bg_inset-soft_15_121212_1x100.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_aaaaaa_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_c98000_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\images\ui-icons_f29a00_256x240.png" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\jquery-ui.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\jquery-ui.min.css" />
+    <Content Include="Content\bower_components\jquery-ui\themes\vader\theme.css" />
+    <Content Include="Content\bower_components\jquery-ui\ui\core.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\data.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\disable-selection.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effect.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-blind.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-bounce.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-clip.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-drop.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-explode.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-fade.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-fold.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-highlight.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-puff.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-pulsate.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-scale.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-shake.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-size.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-slide.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\effects\effect-transfer.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\escape-selector.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\focusable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\form-reset-mixin.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\form.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-af.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ar-DZ.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ar.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-az.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-be.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-bg.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-bs.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ca.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-cs.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-cy-GB.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-da.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-de.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-el.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-en-AU.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-en-GB.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-en-NZ.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-eo.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-es.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-et.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-eu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fa.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fo.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fr-CA.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fr-CH.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-fr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-gl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-he.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-hi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-hr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-hu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-hy.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-id.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-is.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-it-CH.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-it.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ja.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ka.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-kk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-km.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ko.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ky.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-lb.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-lt.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-lv.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-mk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ml.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ms.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-nb.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-nl-BE.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-nl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-nn.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-no.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-pl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-pt-BR.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-pt.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-rm.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ro.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ru.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sq.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sr-SR.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-sv.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-ta.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-th.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-tj.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-tr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-uk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-vi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-zh-CN.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-zh-HK.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\i18n\datepicker-zh-TW.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\ie.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\jquery-1-7.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\keycode.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\labels.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\core.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\data.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\disable-selection.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\effect.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\escape-selector.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\focusable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\form-reset-mixin.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\form.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-af.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ar-DZ.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ar.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-az.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-be.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-bg.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-bs.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ca.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-cs.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-cy-GB.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-da.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-de.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-el.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-en-AU.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-en-GB.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-en-NZ.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-eo.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-es.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-et.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-eu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fa.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fo.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fr-CA.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fr-CH.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-fr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-gl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-he.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-hi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-hr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-hu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-hy.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-id.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-is.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-it-CH.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-it.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ja.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ka.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-kk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-km.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ko.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ky.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-lb.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-lt.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-lv.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-mk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ml.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ms.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-nb.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-nl-BE.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-nl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-nn.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-no.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-pl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-pt-BR.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-pt.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-rm.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ro.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ru.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sl.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sq.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sr-SR.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-sv.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-ta.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-th.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-tj.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-tr.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-uk.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-vi.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-zh-CN.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-zh-HK.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\i18n\datepicker-zh-TW.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\ie.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\jquery-1-7.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\keycode.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\labels.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\plugin.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\position.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\safe-active-element.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\safe-blur.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\scroll-parent.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\tabbable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\unique-id.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\version.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\minified\widget.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\plugin.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\position.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\safe-active-element.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\safe-blur.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\scroll-parent.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\tabbable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\unique-id.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\version.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widget.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\accordion.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\autocomplete.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\button.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\checkboxradio.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\controlgroup.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\datepicker.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\dialog.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\draggable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\droppable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\menu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\mouse.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\progressbar.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\resizable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\selectable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\selectmenu.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\slider.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\sortable.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\spinner.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\tabs.js" />
+    <Content Include="Content\bower_components\jquery-ui\ui\widgets\tooltip.js" />
+    <Content Include="Content\bower_components\jquery\AUTHORS.txt" />
+    <Content Include="Content\bower_components\jquery\dist\core.js" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.js" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.slim.js" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Content\bower_components\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="Content\bower_components\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="Content\bower_components\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="Content\bower_components\jquery\LICENSE.txt" />
+    <Content Include="Content\bower_components\jquery\src\ajax.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\var\location.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Content\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="Content\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="Content\bower_components\jquery\src\callbacks.js" />
+    <Content Include="Content\bower_components\jquery\src\core.js" />
+    <Content Include="Content\bower_components\jquery\src\core\access.js" />
+    <Content Include="Content\bower_components\jquery\src\core\camelCase.js" />
+    <Content Include="Content\bower_components\jquery\src\core\DOMEval.js" />
+    <Content Include="Content\bower_components\jquery\src\core\init.js" />
+    <Content Include="Content\bower_components\jquery\src\core\isAttached.js" />
+    <Content Include="Content\bower_components\jquery\src\core\nodeName.js" />
+    <Content Include="Content\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="Content\bower_components\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="Content\bower_components\jquery\src\core\ready.js" />
+    <Content Include="Content\bower_components\jquery\src\core\readyException.js" />
+    <Content Include="Content\bower_components\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="Content\bower_components\jquery\src\core\support.js" />
+    <Content Include="Content\bower_components\jquery\src\core\toType.js" />
+    <Content Include="Content\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Content\bower_components\jquery\src\css.js" />
+    <Content Include="Content\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Content\bower_components\jquery\src\css\adjustCSS.js" />
+    <Content Include="Content\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="Content\bower_components\jquery\src\css\finalPropName.js" />
+    <Content Include="Content\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Content\bower_components\jquery\src\css\showHide.js" />
+    <Content Include="Content\bower_components\jquery\src\css\support.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\rboxStyle.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Content\bower_components\jquery\src\css\var\swap.js" />
+    <Content Include="Content\bower_components\jquery\src\data.js" />
+    <Content Include="Content\bower_components\jquery\src\data\Data.js" />
+    <Content Include="Content\bower_components\jquery\src\data\var\acceptData.js" />
+    <Content Include="Content\bower_components\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Content\bower_components\jquery\src\data\var\dataUser.js" />
+    <Content Include="Content\bower_components\jquery\src\deferred.js" />
+    <Content Include="Content\bower_components\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="Content\bower_components\jquery\src\deprecated.js" />
+    <Content Include="Content\bower_components\jquery\src\dimensions.js" />
+    <Content Include="Content\bower_components\jquery\src\effects.js" />
+    <Content Include="Content\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Content\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="Content\bower_components\jquery\src\event.js" />
+    <Content Include="Content\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="Content\bower_components\jquery\src\event\alias.js" />
+    <Content Include="Content\bower_components\jquery\src\event\focusin.js" />
+    <Content Include="Content\bower_components\jquery\src\event\support.js" />
+    <Content Include="Content\bower_components\jquery\src\event\trigger.js" />
+    <Content Include="Content\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="Content\bower_components\jquery\src\exports\global.js" />
+    <Content Include="Content\bower_components\jquery\src\jquery.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\getAll.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Content\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Content\bower_components\jquery\src\offset.js" />
+    <Content Include="Content\bower_components\jquery\src\queue.js" />
+    <Content Include="Content\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="Content\bower_components\jquery\src\selector-native.js" />
+    <Content Include="Content\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="Content\bower_components\jquery\src\selector.js" />
+    <Content Include="Content\bower_components\jquery\src\serialize.js" />
+    <Content Include="Content\bower_components\jquery\src\traversing.js" />
+    <Content Include="Content\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="Content\bower_components\jquery\src\traversing\var\dir.js" />
+    <Content Include="Content\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Content\bower_components\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Content\bower_components\jquery\src\var\arr.js" />
+    <Content Include="Content\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="Content\bower_components\jquery\src\var\concat.js" />
+    <Content Include="Content\bower_components\jquery\src\var\document.js" />
+    <Content Include="Content\bower_components\jquery\src\var\documentElement.js" />
+    <Content Include="Content\bower_components\jquery\src\var\fnToString.js" />
+    <Content Include="Content\bower_components\jquery\src\var\getProto.js" />
+    <Content Include="Content\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="Content\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="Content\bower_components\jquery\src\var\isFunction.js" />
+    <Content Include="Content\bower_components\jquery\src\var\isWindow.js" />
+    <Content Include="Content\bower_components\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="Content\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="Content\bower_components\jquery\src\var\push.js" />
+    <Content Include="Content\bower_components\jquery\src\var\rcheckableType.js" />
+    <Content Include="Content\bower_components\jquery\src\var\rcssNum.js" />
+    <Content Include="Content\bower_components\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="Content\bower_components\jquery\src\var\slice.js" />
+    <Content Include="Content\bower_components\jquery\src\var\support.js" />
+    <Content Include="Content\bower_components\jquery\src\var\toString.js" />
+    <Content Include="Content\bower_components\jquery\src\wrap.js" />
+    <Content Include="Content\bower_components\select2\dist\css\select2.css" />
+    <Content Include="Content\bower_components\select2\dist\css\select2.min.css" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\af.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ar.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\az.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\bg.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\bn.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\bs.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ca.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\cs.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\da.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\de.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\dsb.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\el.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\en.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\es.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\et.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\eu.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\fa.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\fi.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\fr.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\gl.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\he.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\hi.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\hr.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\hsb.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\hu.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\hy.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\id.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\is.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\it.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ja.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ka.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\km.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ko.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\lt.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\lv.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\mk.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ms.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\nb.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ne.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\nl.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\pl.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ps.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\pt-BR.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\pt.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ro.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\ru.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sk.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sl.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sq.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sr-Cyrl.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sr.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\sv.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\th.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\tk.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\tr.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\uk.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\vi.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\zh-CN.js" />
+    <Content Include="Content\bower_components\select2\dist\js\i18n\zh-TW.js" />
+    <Content Include="Content\bower_components\select2\dist\js\select2.full.js" />
+    <Content Include="Content\bower_components\select2\dist\js\select2.full.min.js" />
+    <Content Include="Content\bower_components\select2\dist\js\select2.js" />
+    <Content Include="Content\bower_components\select2\dist\js\select2.min.js" />
+    <Content Include="Content\bower_components\select2\docs\announcements-4.0.html" />
+    <Content Include="Content\bower_components\select2\docs\community.html" />
+    <Content Include="Content\bower_components\select2\docs\examples.html" />
+    <Content Include="Content\bower_components\select2\docs\index.html" />
+    <Content Include="Content\bower_components\select2\docs\options-old.html" />
+    <Content Include="Content\bower_components\select2\docs\options.html" />
+    <Content Include="Content\bower_components\select2\Gruntfile.js" />
+    <Content Include="Content\bower_components\select2\src\js\banner.end.js" />
+    <Content Include="Content\bower_components\select2\src\js\banner.start.js" />
+    <Content Include="Content\bower_components\select2\src\js\jquery.mousewheel.shim.js" />
+    <Content Include="Content\bower_components\select2\src\js\jquery.select2.js" />
+    <Content Include="Content\bower_components\select2\src\js\jquery.shim.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\containerCss.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\dropdownCss.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\initSelection.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\inputData.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\matcher.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\query.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\compat\utils.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\core.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\ajax.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\array.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\base.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\maximumInputLength.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\maximumSelectionLength.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\minimumInputLength.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\select.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\tags.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\data\tokenizer.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\defaults.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\diacritics.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\attachBody.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\attachContainer.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\closeOnSelect.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\hidePlaceholder.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\infiniteScroll.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\minimumResultsForSearch.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\search.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\selectOnClose.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\dropdown\stopPropagation.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\af.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ar.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\az.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\bg.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\bn.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\bs.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ca.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\cs.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\da.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\de.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\dsb.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\el.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\en.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\es.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\et.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\eu.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\fa.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\fi.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\fr.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\gl.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\he.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\hi.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\hr.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\hsb.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\hu.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\hy.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\id.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\is.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\it.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ja.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ka.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\km.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ko.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\lt.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\lv.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\mk.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ms.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\nb.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ne.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\nl.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\pl.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ps.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\pt-BR.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\pt.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ro.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\ru.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sk.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sl.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sq.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sr-Cyrl.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sr.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\sv.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\th.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\tk.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\tr.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\uk.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\vi.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\zh-CN.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\i18n\zh-TW.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\keys.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\options.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\results.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\allowClear.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\base.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\clickMask.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\eventRelay.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\multiple.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\placeholder.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\search.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\single.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\selection\stopPropagation.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\translation.js" />
+    <Content Include="Content\bower_components\select2\src\js\select2\utils.js" />
+    <Content Include="Content\bower_components\select2\src\js\wrapper.end.js" />
+    <Content Include="Content\bower_components\select2\src\js\wrapper.start.js" />
+    <Content Include="Content\bower_components\select2\tests\a11y\search-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\a11y\selection-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\array-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\base-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\inputData-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\maximumInputLength-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\maximumSelectionLength-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\minimumInputLength-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\select-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\tags-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\data\tokenizer-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\dropdown\dropdownCss-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\dropdown\positioning-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\dropdown\selectOnClose-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\dropdown\stopPropagation-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\helpers.js" />
+    <Content Include="Content\bower_components\select2\tests\integration-jq1.html" />
+    <Content Include="Content\bower_components\select2\tests\integration-jq2.html" />
+    <Content Include="Content\bower_components\select2\tests\integration-jq3.html" />
+    <Content Include="Content\bower_components\select2\tests\integration\dom-changes.js" />
+    <Content Include="Content\bower_components\select2\tests\integration\jquery-calls.js" />
+    <Content Include="Content\bower_components\select2\tests\integration\select2-methods.js" />
+    <Content Include="Content\bower_components\select2\tests\options\ajax-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\options\data-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\options\deprecated-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\options\translation-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\options\width-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\results\focusing-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\results\infiniteScroll-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\results\option-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\allowClear-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\containerCss-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\focusing-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\multiple-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\placeholder-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\search-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\single-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\selection\stopPropagation-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\unit-jq1.html" />
+    <Content Include="Content\bower_components\select2\tests\unit-jq2.html" />
+    <Content Include="Content\bower_components\select2\tests\unit-jq3.html" />
+    <Content Include="Content\bower_components\select2\tests\utils\decorator-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\utils\escapeMarkup-tests.js" />
+    <Content Include="Content\bower_components\select2\tests\vendor\jquery-1.7.2.js" />
+    <Content Include="Content\bower_components\select2\tests\vendor\jquery-2.2.4.js" />
+    <Content Include="Content\bower_components\select2\tests\vendor\jquery-3.4.1.js" />
+    <Content Include="Content\bower_components\select2\tests\vendor\qunit-1.23.1.css" />
+    <Content Include="Content\bower_components\select2\tests\vendor\qunit-1.23.1.js" />
+    <Content Include="Content\dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE.min.css" />
+    <Content Include="Content\dist\css\custom.css" />
+    <Content Include="Content\dist\css\skins\skin-black-light.css" />
+    <Content Include="Content\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-black.css" />
+    <Content Include="Content\dist\css\skins\skin-black.min.css" />
+    <Content Include="Content\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Content\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-blue.css" />
+    <Content Include="Content\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Content\dist\css\skins\skin-green-light.css" />
+    <Content Include="Content\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-green.css" />
+    <Content Include="Content\dist\css\skins\skin-green.min.css" />
+    <Content Include="Content\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Content\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-purple.css" />
+    <Content Include="Content\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Content\dist\css\skins\skin-red-light.css" />
+    <Content Include="Content\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-red.css" />
+    <Content Include="Content\dist\css\skins\skin-red.min.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\dist\css\skins\_all-skins.css" />
+    <Content Include="Content\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Content\dist\css\styles.css" />
+    <Content Include="Content\dist\css\styles.min.css" />
+    <Content Include="Content\dist\img\avatar.png" />
+    <Content Include="Content\dist\img\avatar04.png" />
+    <Content Include="Content\dist\img\avatar2.png" />
+    <Content Include="Content\dist\img\avatar3.png" />
+    <Content Include="Content\dist\img\avatar5.png" />
+    <Content Include="Content\dist\img\credit\american-express.png" />
+    <Content Include="Content\dist\img\credit\cirrus.png" />
+    <Content Include="Content\dist\img\credit\mastercard.png" />
+    <Content Include="Content\dist\img\credit\mestro.png" />
+    <Content Include="Content\dist\img\credit\paypal.png" />
+    <Content Include="Content\dist\img\credit\paypal2.png" />
+    <Content Include="Content\dist\img\credit\visa.png" />
+    <Content Include="Content\dist\img\default-50x50.gif" />
+    <Content Include="Content\dist\img\icons.png" />
+    <Content Include="Content\dist\img\photo1.png" />
+    <Content Include="Content\dist\img\photo2.png" />
+    <Content Include="Content\dist\img\photo3.jpg" />
+    <Content Include="Content\dist\img\photo4.jpg" />
+    <Content Include="Content\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\dist\js\addModul.js" />
+    <Content Include="Content\dist\js\demo.js" />
+    <Content Include="Content\dist\js\main.js" />
+    <Content Include="Content\dist\js\main.min.js" />
+    <Content Include="Content\dist\js\pages\dashboard.js" />
+    <Content Include="Content\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\dataTables.editor.min.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\datatables.min.css" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\datatables.min.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\dataTables.responsive.min.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\editor.dataTables.min.css" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\ga.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\jquery-3.5.1.js" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\site.css" />
+    <Content Include="Content\Editor _ Editing for DataTables_files\site.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-de.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-es.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-fr.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-he.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-ja.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-ka.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-pl.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-pt-br.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-pt.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-ru.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-tr.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-zh-cn.js" />
+    <Content Include="Content\jsgrid-1.5.3\i18n\jsgrid-zh-tw.js" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid-theme.css" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid-theme.min.css" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid.css" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid.js" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid.min.css" />
+    <Content Include="Content\jsgrid-1.5.3\jsgrid.min.js" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="File\Images\backgroundYTCC.jpg" />
+    <Content Include="File\Images\Logo_YTCC.jpg" />
+    <Content Include="File\Images\networking.jpg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\.bower.json" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\.editorconfig" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\.travis.yml" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\bower.json" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\CHANGELOG.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\CODE_OF_CONDUCT.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\composer.json" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\CONTRIBUTING.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.css.map" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\dist\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\conf.py" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\events.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\i18n.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\index.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\keyboard.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\make.bat" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\Makefile" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\markup.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\methods.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\options.rst" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\docs\README.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\grunt\.jshintrc" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\.jscsrc" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\js\.jshintrc" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\less\.csslintrc" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\less\datepicker3.less" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\LICENSE" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\package.json" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\README.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\tests\README.md" />
+    <Content Include="Content\bower_components\bootstrap-datepicker\yarn.lock" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\.bower.json" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\bower.json" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\daterangepicker.scss" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\example\browserify\README.md" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\package.json" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\README.md" />
+    <Content Include="Content\bower_components\bootstrap\.bower.json" />
+    <Content Include="Content\bower_components\bootstrap\bower.json" />
+    <Content Include="Content\bower_components\bootstrap\CHANGELOG.md" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bower_components\bootstrap\Gemfile" />
+    <Content Include="Content\bower_components\bootstrap\Gemfile.lock" />
+    <Content Include="Content\bower_components\bootstrap\grunt\.jshintrc" />
+    <Content Include="Content\bower_components\bootstrap\grunt\.stylelintrc" />
+    <Content Include="Content\bower_components\bootstrap\grunt\configBridge.json" />
+    <Content Include="Content\bower_components\bootstrap\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\bower_components\bootstrap\js\.jscsrc" />
+    <Content Include="Content\bower_components\bootstrap\js\.jshintrc" />
+    <Content Include="Content\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Content\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Content\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Content\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Content\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Content\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Content\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Content\bower_components\bootstrap\less\close.less" />
+    <Content Include="Content\bower_components\bootstrap\less\code.less" />
+    <Content Include="Content\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Content\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Content\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Content\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Content\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Content\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Content\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Content\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Content\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Content\bower_components\bootstrap\less\media.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\forms.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\grid.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\image.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\labels.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\panels.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\resize.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\size.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Content\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Content\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Content\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Content\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Content\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Content\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Content\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Content\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Content\bower_components\bootstrap\less\print.less" />
+    <Content Include="Content\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Content\bower_components\bootstrap\less\responsive-embed.less" />
+    <Content Include="Content\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Content\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Content\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Content\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Content\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Content\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Content\bower_components\bootstrap\less\type.less" />
+    <Content Include="Content\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Content\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Content\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Content\bower_components\bootstrap\LICENSE" />
+    <Content Include="Content\bower_components\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Content\bower_components\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Content\bower_components\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Content\bower_components\bootstrap\package-lock.json" />
+    <Content Include="Content\bower_components\bootstrap\package.json" />
+    <Content Include="Content\bower_components\bootstrap\README.md" />
+    <Content Include="Content\bower_components\font-awesome\.bower.json" />
+    <Content Include="Content\bower_components\font-awesome\.npmignore" />
+    <Content Include="Content\bower_components\font-awesome\bower.json" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\bower_components\font-awesome\less\animated.less" />
+    <Content Include="Content\bower_components\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\bower_components\font-awesome\less\core.less" />
+    <Content Include="Content\bower_components\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\bower_components\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\bower_components\font-awesome\less\icons.less" />
+    <Content Include="Content\bower_components\font-awesome\less\larger.less" />
+    <Content Include="Content\bower_components\font-awesome\less\list.less" />
+    <Content Include="Content\bower_components\font-awesome\less\mixins.less" />
+    <Content Include="Content\bower_components\font-awesome\less\path.less" />
+    <Content Include="Content\bower_components\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\bower_components\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\bower_components\font-awesome\less\stacked.less" />
+    <Content Include="Content\bower_components\font-awesome\less\variables.less" />
+    <Content Include="Content\bower_components\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_core.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_list.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_path.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\bower_components\jquery-slimscroll\.bower.json" />
+    <Content Include="Content\bower_components\jquery-slimscroll\bower.json" />
+    <Content Include="Content\bower_components\jquery-slimscroll\package.json" />
+    <Content Include="Content\bower_components\jquery-slimscroll\README.md" />
+    <Content Include="Content\bower_components\jquery-ui\.bower.json" />
+    <Content Include="Content\bower_components\jquery-ui\bower.json" />
+    <Content Include="Content\bower_components\jquery-ui\component.json" />
+    <Content Include="Content\bower_components\jquery-ui\composer.json" />
+    <Content Include="Content\bower_components\jquery-ui\package.json" />
+    <Content Include="Content\bower_components\jquery-ui\README.md" />
+    <Content Include="Content\bower_components\jquery-ui\ui\.jshintrc" />
+    <Content Include="Content\bower_components\jquery\.bower.json" />
+    <Content Include="Content\bower_components\jquery\bower.json" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.slim.min.map" />
+    <Content Include="Content\bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Content\bower_components\jquery\README.md" />
+    <Content Include="Content\bower_components\jquery\src\.eslintrc.json" />
+    <Content Include="Content\bower_components\select2\.bower.json" />
+    <Content Include="Content\bower_components\select2\.editorconfig" />
+    <Content Include="Content\bower_components\select2\.github\CONTRIBUTING.md" />
+    <Content Include="Content\bower_components\select2\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\bower_components\select2\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Content\bower_components\select2\.github\stale.yml" />
+    <Content Include="Content\bower_components\select2\.jshintignore" />
+    <Content Include="Content\bower_components\select2\.jshintrc" />
+    <Content Include="Content\bower_components\select2\.travis.yml" />
+    <Content Include="Content\bower_components\select2\bower.json" />
+    <Content Include="Content\bower_components\select2\CHANGELOG.md" />
+    <Content Include="Content\bower_components\select2\component.json" />
+    <Content Include="Content\bower_components\select2\composer.json" />
+    <Content Include="Content\bower_components\select2\docs\README.md" />
+    <Content Include="Content\bower_components\select2\LICENSE.md" />
+    <Content Include="Content\bower_components\select2\package.json" />
+    <Content Include="Content\bower_components\select2\README.md" />
+    <Content Include="Content\bower_components\select2\src\scss\core.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\mixins\_gradients.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\classic\layout.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\classic\_defaults.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\classic\_multiple.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\classic\_single.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\default\layout.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\default\_multiple.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\theme\default\_single.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\_dropdown.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\_multiple.scss" />
+    <Content Include="Content\bower_components\select2\src\scss\_single.scss" />
+    <Content Include="Content\dist\css\styles.css.map" />
+    <Content Include="Content\dist\css\styles.min.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\Template\BaoCaoDoanVao.xls" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\uploadfile.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\Numeric.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_LeftSidebar.cshtml" />
+    <Content Include="Views\QLDoanVao\_ThemMoi.cshtml" />
+    <Content Include="Views\QLDoanRa\Index.cshtml" />
+    <Content Include="Views\QLDoanRa\_ChiTietDoanRa.cshtml" />
+    <Content Include="Views\QLDoanRa\_ThemMoiDoanRa.cshtml" />
+    <Content Include="Views\QLDeCuong\IndexDeCuong.cshtml" />
+    <Content Include="Views\QLDeCuong\_ChiTietDeCuong.cshtml" />
+    <Content Include="Views\QLDeCuong\_ThemMoiDeCuong.cshtml" />
+    <Content Include="Views\QLDeCuong\IndexDonViHopTac.cshtml" />
+    <Content Include="Views\QLDeCuong\_ChiTietDonViHopTac.cshtml" />
+    <Content Include="Views\QLDeCuong\_ThemMoiDonViHopTac.cshtml" />
+    <Content Include="Views\QLDeCuong\IndexDauMoi.cshtml" />
+    <Content Include="Views\QLDeCuong\_ChiTietDauMoi.cshtml" />
+    <Content Include="Views\QLDeCuong\_ThemDauMoi.cshtml" />
+    <Content Include="Views\QLDeCuong\IndexNguonTaiTro.cshtml" />
+    <Content Include="Views\QLTruyenThongQuangBa\Index.cshtml" />
+    <Content Include="Views\QLTruyenThongQuangBa\_ChiTiet.cshtml" />
+    <Content Include="Views\QLTruyenThongQuangBa\_ThemMoi.cshtml" />
+    <Content Include="Views\QLSanPhamTruyenThong\Index.cshtml" />
+    <Content Include="Views\QLSanPhamTruyenThong\_ChiTiet.cshtml" />
+    <Content Include="Views\QLSanPhamTruyenThong\_ThemMoi.cshtml" />
+    <Content Include="Views\QLDoiTacTruyenThong\Index.cshtml" />
+    <Content Include="Views\QLDoiTacTruyenThong\_ChiTiet.cshtml" />
+    <Content Include="Views\QLDoiTacTruyenThong\_ThemMoi.cshtml" />
+    <Content Include="Views\QLHopTac\IndexHoatDongHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietHoatDongHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemHoatDongHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\IndexDonViHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietDonViHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemDonViHopTac.cshtml" />
+    <Content Include="Views\QLHopTac\IndexDauMoi.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietDauMoi.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemDauMoi.cshtml" />
+    <Content Include="Views\QLHopTac\IndexNguonTaiTro.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietNguonTaiTro.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemNguonTaiTro.cshtml" />
+    <Content Include="Views\QLDeCuong\_ChiTietNguonTaiTro.cshtml" />
+    <Content Include="Views\QLDeCuong\_ThemNguonTaiTro.cshtml" />
+    <Content Include="Views\QLHopTac\IndexDonViChuQuan.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietDonViChuQuan.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemDonViChuQuan.cshtml" />
+    <Content Include="Views\QLHopTac\IndexTTChiTietHDHT.cshtml" />
+    <Content Include="Views\QLHopTac\_ChiTietTT.cshtml" />
+    <Content Include="Views\QLHopTac\_ThemTT.cshtml" />
+    <Content Include="Views\QLDangTin\Index.cshtml" />
+    <Content Include="Views\QLDangTin\_ChiTiet.cshtml" />
+    <Content Include="Views\CoSoDuLieuQT\_ThemMoi.cshtml" />
+    <Content Include="Views\QLDangTin\_ThemMoi.cshtml" />
+    <Content Include="Views\CoSoDuLieuQT\Index.cshtml" />
+    <Content Include="Views\CoSoDuLieuQT\_ChiTiet.cshtml" />
+    <Content Include="Views\QLDoan\DSDoanDen.cshtml" />
+    <Content Include="Views\QLDoan\_ChiTietDoanDen.cshtml" />
+    <Content Include="Views\QLDoan\DSDoanDi.cshtml" />
+    <Content Include="Views\QLDoan\_ThemDoanDen.cshtml" />
+    <Content Include="Views\QLDoan\DSThanhVienDen.cshtml" />
+    <Content Include="Views\UploadFile\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\bower_components\bootstrap-datepicker\build\" />
+    <Folder Include="Content\plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56330</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56330/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

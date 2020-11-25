@@ -1,0 +1,73 @@
+﻿@using QLHTQT_Aplication.Models
+@using QLHTQT_Aplication.Util
+
+@{ 
+    var userinfo = (UserModel)SessionControl.GetObject(Constants.User);
+}
+
+<ul class="sidebar-menu" data-widget="tree">
+    <img src="~/Content/Logo/Logo_YTCC.jpg" style="width:60%;margin-left:20%;margin-right:auto;margin-top:2%;border-radius:50%" />
+    <li class="header">TRÌNH QUẢN LÝ</li>
+    <li>
+        <a href="@Url.Action("DSDoanDen","QLDoan")">
+            <i class="fa fa-folder"></i> <span>QUẢN LÝ ĐOÀN</span>
+        </a>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-folder"></i> <span> Quản lý đề cương</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("IndexDeCuong","QLDeCuong")"><i class="fa fa-circle-o"></i>Đề cương</a></li>
+            <li><a href="@Url.Action("IndexDonViHopTac","QLDeCuong")"><i class="fa fa-circle-o"></i>Đơn vị hợp tác viết đề cương</a></li>
+            <li><a href="@Url.Action("IndexDauMoi","QLDeCuong")"><i class="fa fa-circle-o"></i>Đầu mối viết đề cương</a></li>
+            <li><a href="@Url.Action("IndexNguonTaiTro","QLDeCuong")"><i class="fa fa-circle-o"></i>Nguồn tài trợ dự kiến</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="@Url.Action("Index", "QLTruyenThongQuangBa")">
+            <i class="fa fa-folder"></i><span> Quản lý hoạt động TTQB</span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Index","QLSanPhamTruyenThong")">
+            <i class="fa fa-folder"></i><span> Quản lý sản phẩm TTQB</span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Index","QLDoiTacTruyenThong")">
+            <i class="fa fa-folder"></i><span> Quản lý các đối tác TT</span>
+        </a>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-folder"></i><span> QL mối quan hệ HTQT </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("IndexHoatDongHopTac","QLHopTac")"><i class="fa fa-circle-o"></i>Hoạt động hợp tác</a></li>
+            <li><a href="@Url.Action("IndexDonViHopTac","QLHopTac")"><i class="fa fa-circle-o"></i>Đơn vị hợp tác</a></li>
+            <li><a href="@Url.Action("IndexDonViChuQuan","QLHopTac")"><i class="fa fa-circle-o"></i>Đơn vị chủ quản</a></li>
+            <li><a href="@Url.Action("IndexDauMoi","QLHopTac")"><i class="fa fa-circle-o"></i>Đầu mối triển khai</a></li>
+            <li><a href="@Url.Action("IndexNguonTaiTro","QLHopTac")"><i class="fa fa-circle-o"></i>Nguồn tài trợ</a></li>
+            <li><a href="@Url.Action("IndexTTChiTietHDHT","QLHopTac")"><i class="fa fa-circle-o"></i>Thông tin chi tiết HĐHT</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="@Url.Action("Index","QLDangTin")">
+            <i class="fa fa-folder"></i><span> Quản lý đăng tin bài</span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Index","CoSoDuLieuQT")">
+            <i class="fa fa-folder"></i><span> Cơ sở dữ liệu quốc tế</span>
+        </a>
+    </li>
+</ul>
+
+

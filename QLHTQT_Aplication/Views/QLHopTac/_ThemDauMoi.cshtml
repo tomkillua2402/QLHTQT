@@ -1,0 +1,94 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM ĐẦU MỐI TRIỂN KHAI TẠI TRƯỜNG</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Họ tên</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Nhiệm vụ:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Chức danh:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại đơn vị đầu mối:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Khoa / Viện</option>
+                                    <option value="2">Phòng / ban chức năng</option>
+                                    <option value="3">Trung tâm</option>
+                                    <option value="4">Ban quản lý</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đơn vị đầu mối:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số điện thoại:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>

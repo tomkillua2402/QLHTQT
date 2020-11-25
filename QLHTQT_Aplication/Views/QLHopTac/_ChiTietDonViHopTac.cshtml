@@ -1,0 +1,110 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>CHI TIẾT ĐƠN VỊ HỢP TÁC</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên đơn vị:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 col-md-10">
+                                <input type="text" name="name" value="Đơn vị NamViet" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Phân loại đơn vị:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1" selected>Việt Nam</option>
+                                    <option value="2">Quốc tế</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Quốc gia:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1" selected>Việt Nam</option>
+                                    <option value="2">Thai Lan</option>
+                                    <option value="3">Lào</option>
+                                    <option value="4">Campuchia</option>
+                                    <option value="5">Trung Quốc</option>
+                                    <option value="6">........</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Nhóm tổ chức:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Tổ chức chính phủ Việt Nam</option>
+                                    <option value="2" selected>NGO Việt Nam</option>
+                                    <option value="3">Chính quyền địa phương VN</option>
+                                    <option value="4">Đơn vị tư nhân VN</option>
+                                    <option value="5">Tổ chức chính phủ nước ngoài</option>
+                                    <option value="6">NGO quốc tế</option>
+                                    <option value="7">Đơn vị tổ chức nước ngoài</option>
+                                    <option value="8">Tổ chức quốc tế</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Giấy phép hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control" value="Giấy phép B" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Địa chỉ:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" value="8686 đường Nguyễn Huy Tưởng" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số điện thoại:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" value="0987654321" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;CẬP NHẬT</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_phe_duyet').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+
+
+

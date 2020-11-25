@@ -1,0 +1,95 @@
+﻿
+@model QLHTQT_Aplication.Models.UploadConfig
+<style type="text/css">
+    .progress {
+        position: relative;
+        margin: 10px 0;
+        height: 24px;
+    }
+
+    .progress-text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        padding-right: 5px;
+        color: #fff;
+        line-height: 24px;
+    }
+
+    .upload-item img, .upload-file-item img {
+        max-width: 100%;
+        position: relative;
+    }
+
+    .upload-item, .upload-file-item {
+        padding: 5px;
+    }
+
+        .upload-item i, .upload-file-item i {
+            position: absolute;
+            right: 7px;
+            top: 16px;
+            color: red;
+        }
+
+    .upload-items {
+        padding: 0 10px;
+    }
+
+    .upload-file-item {
+        display: flex;
+        width: 100%;
+        position: relative;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <input type="file" class="form-control" Accept="@Model.Accept" data-overwrite="@Model.Overwrite" name="@Model.Name" id="@Model.ID" @(Model.isMultiple ? "multiple" : "") style="display:none;">
+            <input type="hidden" id="displaytype_@Model.ID" value="@Model.DisplayType" />
+            <div class="bootstrap-filestyle input-group">
+                <span class="group-span-filestyle " tabindex="0">
+                    <label for="@(Model.ID)" class="btn btn-secondary ">
+                        <span class="icon-span-filestyle fas fa-folder-open"></span>
+                        <span class="buttonText">Choose file</span> <img src="~/Content/vertical/assets/images/loading.gif" class="loading" style="display:none;" />
+                    </label>
+                </span>
+            </div>
+        </div>
+        <div id="progress-group"></div>
+    </div>
+    <div class="col-md-12" id="listfile">
+        <div class="row upload-items @Model.ID">
+
+        </div>
+    </div>
+</div>
+<script src="/Scripts/js/uploadfile.js"></script>
+<script>
+    $(document).ready(function () {
+        debugger
+        var arrFiles_@Model.ID = [];
+        if ($("#@Model.ID.Split('_')[0]").val() != '') {
+            arrFiles_@Model.ID = $("#@Model.ID.Split('_')[0]").val().split(',');
+        }
+        $("#@Model.ID").change(function () {
+            debugger;
+            if ($('#@Model.ID').attr('data-overwrite')) {
+                arrFiles_@Model.ID = [];
+                $("#@Model.ID.Split('_')[0]").val(null);
+            }
+            return doUpload('@Model.ID', function (res) {
+                if ($("#@Model.ID.Split('_')[0]").val() != '') {
+                    arrFiles_@Model.ID = $("#@Model.ID.Split('_')[0]").val().split(',');
+                }
+                else {
+                    arrFiles_@Model.ID = [];
+                }
+                (arrFiles_@Model.ID).push(res);
+                $("#@Model.ID.Split('_')[0]").val((arrFiles_@Model.ID).join(','));
+            });
+        })
+    })
+</script>
+

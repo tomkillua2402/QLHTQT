@@ -1,0 +1,107 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>CHI TIẾT CƠ SỞ DỮ LIỆU QUỐC TẾ</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên cơ sở dữ liệu:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số đăng ký:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <fieldset>
+                        <legend> </legend>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>1.Ngày sử dụng:</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <input type="datetime" id="Ngay_su_dung" class="form-control" />
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>2.Tên dự án - đề cương:</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <select class="form-control select2">
+                                        <option value="1">Nghiên cứu A</option>
+                                        <option value="2">Nghiên cứu giải phẫu</option>
+                                        <option value="3">Nghiên cứu B</option>
+                                        <option value="4">Nghiên cứu C</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>3.Mục đích(tình trạng):</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <select class="form-control select2">
+                                        <option value="1">Nộp đề cương</option>
+                                        <option value="2">Triển khai dự án</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>4.Mục đích(nội dung):</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-4">
+                                    <select class="form-control select2">
+                                        <option value="1">Đào tạo</option>
+                                        <option value="2">Nghiên cứu khoa học</option>
+                                        <option value="3">Tư vấn - dịch vụ - phát triển nâng cao năng lực cho cơ sở khác</option>
+                                        <option value="4">Phát triển nâng cao năng lực cho trường ĐHYTCC</option>
+                                        <option value="5">Khác</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>5.Mục đích(nội dung - khác):</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <input type="text" name="name" class="form-control" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_su_dung').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+

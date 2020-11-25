@@ -1,0 +1,212 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM HOẠT ĐỘNG TRUYỀN THÔNG QUẢNG BÁ</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mã hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name"  class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Loại hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Hội nghị</option>
+                                    <option value="2">Hội thảo</option>
+                                    <option value="3">Tọa đàm truyền hình</option>
+                                    <option value="4">Lễ tốt nghiệp</option>
+                                    <option value="5">Lễ khai giảng</option>
+                                    <option value="6">Tập huấn</option>
+                                    <option value="7">Mít tinh</option>
+                                    <option value="8">Gặp mặt</option>
+                                    <option value="9">Ký kết hợp tác</option>
+                                    <option value="10">Họp báo</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tần suất hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Thường kỳ</option>
+                                    <option value="2" selected>Đột xuất</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đơn vị chủ trì:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Người chịu trách nhiệm:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đon vị phối hợp:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Địa điểm sự kiện:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày bắt đầu:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="datetime" id="Ngay_bat_dau" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày kết thúc:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="datetime" id="Ngay_ket_thuc" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mục đích:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="">Khác</option>
+                                    <option value="1">Đào tạo</option>
+                                    <option value="2">Nghiên cứu khoa học</option>
+                                    <option value="3">Tư vấn-Dịch vụ-Phát triển nâng cao năng lực cho cơ sở khác</option>
+                                    <option value="4">Phát triển nâng cao năng lực cho trường DHYTCC</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mục đích (khác):</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="name" class="form-control" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Đối tác truyền thông:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Đối tác A</option>
+                                    <option value="2">Đối tác B</option>
+                                    <option value="3">Đối tác C</option>
+                                    <option value="4">Đối tác D</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Kênh truyền thông:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Truyền hình</option>
+                                    <option value="2">Báo in</option>
+                                    <option value="3">Báo điện tử</option>
+                                    <option value="4">Phát thanh</option>
+                                    <option value="5">Quảng cáo</option>
+                                    <option value="6">Mạng xã hội</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Sản phẩm truyền thông:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">Áo phông</option>
+                                    <option value="2">Bút Parker</option>
+                                    <option value="3">Bút bi</option>
+                                    <option value="4">Kỷ niệm chương</option>
+                                    <option value="5">USB</option>
+                                    <option value="6">Cốc uống trà</option>
+                                    <option value="7">Cài áo</option>
+                                    <option value="8">Đĩa mạ bạc khắc ảnh trường</option>
+                                    <option value="9">Túi vải nhỏ</option>
+                                    <option value="10">Túi giấy nhỏ</option>
+                                    <option value="11">Túi giấy to</option>
+                                    <option value="12">Quyển giới thiệu về trường</option>
+                                    <option value="13">Kẹp file</option>
+                                    <option value="14">Tờ rơi 7 chương trình đào tạo</option>
+                                    <option value="15">Case study</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tổng chi phí hoạt động:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-4">
+                                <input type="text" name="nam" class="form-control select2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_bat_dau').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    $('#Ngay_ket_thuc').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+

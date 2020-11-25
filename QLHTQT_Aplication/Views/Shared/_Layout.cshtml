@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title - Quản lý khoa học</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="~/Content/dist/css/styles.css">
+    <link rel="stylesheet" href="~/Content/dist/css/custom.css">
+    <link rel="stylesheet" href="~/Content/dist/css/skins/_all-skins.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">*@
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <link href="~/Content/jsgrid-1.5.3/jsgrid.min.css" rel="stylesheet" />
+    <link href="~/Content/jsgrid-1.5.3/jsgrid-theme.min.css" rel="stylesheet" />
+</head>
+
+@using QLHTQT_Aplication.Models
+@using QLHTQT_Aplication.Util
+
+@{
+    var userinfo = (UserModel)SessionControl.GetObject(Constants.User);
+    if(userinfo == null)
+    {
+        Response.Redirect("/Account/Login?redirectUrl="+ Request.FilePath.ToString());
+    }
+}
+<body class="hold-transition skin-green-light sidebar-mini fixed sidebar-mini-expand-feature">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Index","Home")" class="logo">
+                <span class="logo-mini"><b>ĐH</b> Y tế công cộng</span>
+                <span class="logo-lg"><b>ĐH Y tế công cộng</b></span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">@(userinfo == null ? "" : userinfo.Ho_ten)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Account/Logout"><i class="fa fa-power-off"></i>&nbsp;Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            @Html.Partial("_LeftSidebar")
+        </aside>
+        <div class="content-wrapper" id="main_content">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#"><i class="fa fa-home"></i> Trang chủ</a>
+                    </li>
+                    <li class="active">@ViewBag.Title</li>
+                </ol>
+            </section>
+            @if (@ViewBag.Title == "Trang chủ")
+            {
+                <hr style="margin-left:1%;margin-right:1%;border-top-color:darkorchid;border-top-width:4px;margin-bottom:-2%" />
+            }
+            <section class="content">
+                @RenderBody()
+                @*<div class="loading loader loader-bar is-active"></div>*@
+                <div class="modal fade" id="dynamic-modal" data-backdrop="static" data-keyboard="false"></div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <strong style="font-family:'Times New Roman'">Copyright &copy; 2020 <a href="http://namvietjsc.edu.vn/" target="_blank">Nam Viet JSC</a>.</strong>
+            </div>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="~/Content/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.vi.min.js"></script>
+    <script src="~/Content/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/Content/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Content/plugins/jquery-validation/localization/messages_vi.js"></script>
+    <script src="~/Content/dist/js/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        function ShowToastMessage(value, label, type) {
+            toastr[type](value, label)
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "1000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        }
+        function CloseModal() {
+            $("#dynamic-modal-sub").modal('hide');
+        }
+        function convertDate(inputDate) {
+            if (inputDate == '/Date(-62135596800000)/') {
+                return '';
+            }
+            var timeStamp = inputDate.substring(6, 19);
+            var d = new Date(parseInt(timeStamp));
+            var year = d.getFullYear();
+            var month = d.getMonth();
+            var date = d.getDate();
+            return (date < 10 ? ("0" + date) : date) + "/" + (month < 9 ? ("0" + (month + 1)) : (month + 1)) + "/" + year
+        }
+    </script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Content/jsgrid-1.5.3/jsgrid.min.js"></script>
+</body>
+</html>

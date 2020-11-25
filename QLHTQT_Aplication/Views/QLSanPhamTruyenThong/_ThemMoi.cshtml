@@ -1,0 +1,120 @@
+﻿<div class="box box-primary popupStyle">
+    <div class="box-header with-border">
+        <div class="box-header with-border text-center">
+            <h3><strong>THÊM SẢN PHẨM TRUYỀN THÔNG</strong></h3>
+        </div>
+        <form action="">
+            @*@Html.HiddenFor(x => x.Id)*@
+            <div class="box-body box-profile">
+                <div class="main">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Mã sản phẩm:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Tên sản phẩm:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Số nhập vào:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="number" name="name" class="form-control" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Kho nhập:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <select class="form-control select2">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <label>Ngày nhập:</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <input type="datetime" id="Ngay_nhap" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <fieldset>
+                        <legend> </legend>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>1.Số xuất ra:</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <input type="number" name="name" class="form-control" />
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>2.Ngày xuất:</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-4">
+                                    <input type="datetime" id="Ngay_xuat" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label>3.Mã chứng từ xuất:</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-4" id="position">
+                                    <input type="file" name="name" class="form-control btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group text-center">
+                        <button class="btn-sm btn btn-success" onclick="btnSave_Onclick(event)"><i class="fa fa-save"></i>&nbsp;LƯU</button>&nbsp;&nbsp;
+                        <button onclick="CloseModal(event)" class="btn-sm btn btn-danger" style="margin-left:5px"><i class="fa fa-close"></i>&nbsp;ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.select2').select2();
+    $('#Ngay_nhap').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    $('#Ngay_xuat').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd/mm/yyyy'
+    });
+    function CloseModal(e) {
+        e.preventDefault();
+        $("#dynamic-modal-sub").modal("hide");
+    }
+</script>
+
+

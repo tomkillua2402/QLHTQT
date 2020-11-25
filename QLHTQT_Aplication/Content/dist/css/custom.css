@@ -1,0 +1,95 @@
+.error{
+	color: #f00;
+	font-size: 13px;
+	font-style: italic;
+}
+.red{
+	color: #f00;
+}
+.modal-header{
+	background-color: #3c8dbc;
+	position: relative;
+}
+.modal-header h3{
+	color: #fff;
+	font-weight: 500;
+	font-size: 18px;
+}
+.modal-header .close{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	color: #fff;
+	opacity: 1;
+}
+.custom-select{
+	display: inline-block;
+	max-width: 250px;
+	height: 30px;
+	position: relative;
+	top: 3px;
+}
+.footer_tab{
+	margin-top: 10px;
+}
+.file-box {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0px 5px 5px;
+    box-sizing: border-box;
+    height: 34px;
+    cursor: pointer;
+}
+.file-button {
+    background: #007dc5;
+    padding: 0 5px;
+    position: absolute;
+    color: #fff;
+    top: 0px;
+    right: 0px;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+.inputfile {
+    display: none !important;
+}
+
+.form-control.custom_select {
+    width: auto;
+    display: inline-block;
+	height: 30px;
+	padding: 5px 10px;
+}
+.search_custom {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+}
+.search_custom input {
+    height: 30px;
+}
+.search_custom button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    height: 28px;
+    border: none;
+}
+.table > thead > tr > th,.table > tbody > tr > td{
+	vertical-align: middle;
+}
+.minimal_custom{
+	border-color: #3c8dbc
+}
+
+.popupStyle{
+    width: 80%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+.select2{
+      width: 100% !important
+  }

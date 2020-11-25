@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">*@
+    <title>ĐẠI HỌC Y TẾ CÔNG CỘNG</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/dist/css/alt/AdminLTE.min.css">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+</head>
+<body class="hold-transition login-page" style="background-image: url('../../File/Images/backgroundYTCC.jpg'); background-repeat:no-repeat;background-size:cover;background-position:center ">
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="~/File/Images/Logo_YTCC.jpg" style="margin-top:-35%;width:50%;border:none;border-radius:50%"  />
+            @*<h1><a href="#" style="color:deepskyblue;font-size:45%"><b>ĐẠI HỌC Y TẾ CÔNG CỘNG</b></a></h1>*@
+            @*<h3><a href="#" style="color:red"><i>HỆ THỐNG QUẢN LÝ <br /> NGHIÊN CỨU KHOA HỌC</i></a></h3>*@
+            <h3 style="color:white;text-align:center;text-shadow:1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen">HỆ THỐNG QUẢN LÝ HỢP TÁC QUỐC TẾ</h3>
+        </div>
+        <!-- /.login-logo -->
+        @RenderBody()
+        <div class="loading loader loader-bar is-active"></div>
+        <!-- /.login-box-body -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        function ShowToastMessage(value, label, type) {
+            toastr[type](value, label)
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "1000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        }
+    </script>
+    <script src="~/Scripts/toastr.min.js"></script>
+</body>
+</html>
